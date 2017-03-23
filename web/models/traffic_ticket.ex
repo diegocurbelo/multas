@@ -56,6 +56,7 @@ defmodule Multas.TrafficTicket do
         "AVITALIAYMATAOJO"             -> "Av. Italia y Mataojo"
         "AVITALIAYLIDO"                -> "Av. Italia y Lido"
         "AVITALIAYFRANCISCOSIMON"      -> "Av. Italia y Fransico Simón"
+        "AVITALIAYBOLONIA"             -> "Av. Italia y Bolonia"
         "AVMILLANYCISPLATINA"          -> "Av. Millán y Cisplatina"
         _ ->
           Logger.error "Unexpected Traffic Ticket location: #{text}"
