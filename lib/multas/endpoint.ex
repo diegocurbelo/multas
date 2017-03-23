@@ -38,5 +38,8 @@ defmodule Multas.Endpoint do
     key: "_multas_key",
     signing_salt: "/YkSLwJg"
 
+  plug Multas.Metrics.PrometheusExporter
+  plug Multas.Metrics.PipelineInstrumenter
+
   plug Multas.Router
 end

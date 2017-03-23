@@ -6,6 +6,14 @@ defmodule Multas do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    Multas.Metrics.PhoenixInstrumenter.setup()
+    Multas.Metrics.PipelineInstrumenter.setup()
+    Multas.Metrics.RepoInstrumenter.setup()
+    if {:unix, :linux} == :os.type do
+      Prometheus.Registry.register_collector(:prometheus_process_collector)
+    end
+    Multas.Metrics.PrometheusExporter.setup()
+
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository

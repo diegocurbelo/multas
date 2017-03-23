@@ -39,7 +39,8 @@ config :multas, Multas.Repo,
   password: "postgres",
   database: "multas_dev",
   hostname: "localhost",
-  pool_size: 10
+  pool_size: 10,
+  loggers: [Multas.Metrics.RepoInstrumenter]
 
 # Facebook
 config :multas, :facebook,
