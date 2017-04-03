@@ -39,25 +39,26 @@ defmodule Multas.TrafficTicket do
     text
     |> normalize_plate
     |> case do
-        "RAMBLAOHIGGINSY18DEDICIEMBRE" -> "Rambla O'Higgins y 18 de Diciembre"
-        "RAMBLAMGANDHIYSOLANOGARCIA"   -> "Rambla Gandhi y Solano García"
-        "RREPDELPERUYLADEHERRERA"      -> "Rambla Rep. del Perú y L. A. de Herrera"
-        "RREPDEMEXICOYCOSTARICA"       -> "Rambla Rep. de México y Costa Rica"
-        "RREPARGENTINAYCARLOSMMORALES" -> "Rambla Rep. Argentina y Carlos M. Morales"
-        "RREPARGENTINAYEDUARDOACEVEDO" -> "Rambla Rep. Argentina y Eduardo Acevedo"
-        "LADEHERRERAYAVRIVERA"         -> "L. A. de Herrera y Av. Rivera"
-        "BVARTIGASYPEDERNAL"           -> "Bv. Artigas y Pedernal"
-        "BVARTIGASYCAMPISTEGUY"        -> "Bv. Artigas y Campisteguy"
-        "BVARTIGASY21DESETIEMBRE"      -> "Bv. Artigas y 21 de Setiembre"
-        "AVGRALFLORESYDARAMBURU"       -> "Gral. Flores y D. Aramburú"
-        "AVRIVERAYMARIAESPINOLA"       -> "Av. Rivera y Maria Espinola"
+        "AV8DEOCTUBREYGRALGARIBALDI"   -> "Av. 8 de Octubre y Garibaldi"
+        "AVITALIAYBOLONIA"             -> "Av. Italia y Bolonia"
+        "AVITALIAYFRANCISCOSIMON"      -> "Av. Italia y Fransico Simón"
+        "AVITALIAYLIDO"                -> "Av. Italia y Lido"
+        "AVITALIAYMATAOJO"             -> "Av. Italia y Mataojo"
+        "AVMILLANYCISPLATINA"          -> "Av. Millán y Cisplatina"
         "AVRIVERAYAVLUISPONCE"         -> "Av. Rivera y Av. Luis Ponce"
         "AVRIVERAYFCOLLAMBI"           -> "Av. Rivera y Francisco Llambi"
-        "AVITALIAYMATAOJO"             -> "Av. Italia y Mataojo"
-        "AVITALIAYLIDO"                -> "Av. Italia y Lido"
-        "AVITALIAYFRANCISCOSIMON"      -> "Av. Italia y Fransico Simón"
-        "AVITALIAYBOLONIA"             -> "Av. Italia y Bolonia"
-        "AVMILLANYCISPLATINA"          -> "Av. Millán y Cisplatina"
+        "AVRIVERAYMARIAESPINOLA"       -> "Av. Rivera y Maria Espinola"
+        "BVARTIGASY21DESETIEMBRE"      -> "Bv. Artigas y 21 de Setiembre"
+        "BVARTIGASYCAMPISTEGUY"        -> "Bv. Artigas y Campisteguy"
+        "BVARTIGASYPEDERNAL"           -> "Bv. Artigas y Pedernal"
+        "AVGRALFLORESYDARAMBURU"       -> "Gral. Flores y D. Aramburú"
+        "LADEHERRERAYAVRIVERA"         -> "L. A. de Herrera y Av. Rivera"
+        "RAMBLAMGANDHIYSOLANOGARCIA"   -> "Rambla Gandhi y Solano García"
+        "RAMBLAOHIGGINSY18DEDICIEMBRE" -> "Rambla O'Higgins y 18 de Diciembre"
+        "RREPARGENTINAYCARLOSMMORALES" -> "Rambla Rep. Argentina y Carlos M. Morales"
+        "RREPARGENTINAYEDUARDOACEVEDO" -> "Rambla Rep. Argentina y Eduardo Acevedo"
+        "RREPDEMEXICOYCOSTARICA"       -> "Rambla Rep. de México y Costa Rica"
+        "RREPDELPERUYLADEHERRERA"      -> "Rambla Rep. del Perú y L. A. de Herrera"
         _ ->
           Logger.error "Unexpected Traffic Ticket location: #{text}"
           text
@@ -66,10 +67,10 @@ defmodule Multas.TrafficTicket do
 
   defp normalize_reason(text) do
     text
-    |> String.upcase
+    |> normalize_plate
     |> case do
-        "ART. 1/103/2: EXCESO DE VELOCIDAD"       -> "Exceso de velocidad"
-        "ART. 1/106: CRUZAR O GIRAR CON LUZ ROJA" -> "Cruzar o girar con luz roja"
+        "ART11032EXCESODEVELOCIDAD"     -> "Exceso de velocidad"
+        "ART1106CRUZAROGIRARCONLUZROJA" -> "Cruzar o girar con luz roja"
         _ ->
           Logger.error "Unexpected Traffic Ticket reason: #{text}"
           text
