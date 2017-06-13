@@ -78,13 +78,22 @@ defmodule ImpoParser do
   end
 
   defp save_row(data) do
-    case Repo.insert TrafficTicket.changeset(%TrafficTicket{}, data) do
-      {:ok, struct} ->
-        send_notification(struct)
-        struct
+    if String.valid?(data.plate) do
+      case Repo.insert TrafficTicket.changeset(%TrafficTicket{}, data) do
+        {:ok, struct} ->
+          unless String.contains?(struct.plate, ["AAC9039", "AAF4695", "AAF5953", "AAF5953", "AAJ1186", "AAJ8059", "AAP2787", "AAP9857", "AAQ3298", "AAQ5750"]) do
+            send_notification(struct)
+          else
+            "Ignoring notification for: #{struct.plate}"
+          end
+          struct
 
-      {:error, changeset} ->
-        Logger.error "Error inserting Traffic Ticket: #{inspect changeset}"
+        {:error, changeset} ->
+          Logger.error "Error inserting Traffic Ticket: #{inspect changeset}"
+      end
+
+    else
+      Logger.error "Error inserting Traffic Ticket: Invalid plate in: #{inspect data}"
     end
   end
 
@@ -95,5 +104,9 @@ defmodule ImpoParser do
       FacebookMessenger.send_message(n.facebook_id, "Nueva multa publicada para la matrícula #{ticket.plate} del día #{ticket.date} en #{ticket.location} por #{ticket.reason}.\nPuedes verificar las fotos en http://www.montevideo.gub.uy/consultainfracciones")
     end)
   end
+
+
+
+
 
 end

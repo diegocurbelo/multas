@@ -61,6 +61,9 @@ defmodule Multas.TrafficTicket do
         "RREPARGENTINAYEDUARDOACEVEDO" -> "Rambla Rep. Argentina y Eduardo Acevedo"
         "RREPDEMEXICOYCOSTARICA"       -> "Rambla Rep. de México y Costa Rica"
         "RREPDELPERUYLADEHERRERA"      -> "Rambla Rep. del Perú y L. A. de Herrera"
+
+        "AV8DEOCTUBREYCOMERCIO"        -> "Av. 8 de Octubre y Comercio"
+        "AVRIVERAYAROCENA"             -> "Av. Rivera y Arocena"
         _ ->
           Logger.error "Unexpected Traffic Ticket location: #{text}"
           text
