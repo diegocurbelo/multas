@@ -39,12 +39,14 @@ defmodule Multas.TrafficTicket do
     text
     |> normalize_plate
     |> case do
+        "26DEMARZOYAVBRASIL"           -> "26 de Marzo y Av. Brasil"
         "AV8DEOCTUBREYCOMERCIO"        -> "Av. 8 de Octubre y Comercio"
         "AV8DEOCTUBREYGRALGARIBALDI"   -> "Av. 8 de Octubre y Garibaldi"
         "AVITALIAYBOLONIA"             -> "Av. Italia y Bolonia"
         "AVITALIAYFRANCISCOSIMON"      -> "Av. Italia y Fransico Simón"
         "AVITALIAYLIDO"                -> "Av. Italia y Lido"
         "AVITALIAYMATAOJO"             -> "Av. Italia y Mataojo"
+        "AVLARRANAGAYCLARAMUNT"        -> "Av. Larrañaga y Claramunt"
         "AVMILLANYCISPLATINA"          -> "Av. Millán y Cisplatina"
         "AVRIVERAYAROCENA"             -> "Av. Rivera y Arocena"
         "AVRIVERAYAVLUISPONCE"         -> "Av. Rivera y Av. Luis Ponce"

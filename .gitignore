@@ -12,3 +12,4 @@ erl_crash.dump
 /config/prod.secret.exs
 
 .DS_Store
+.deliver/releases/
