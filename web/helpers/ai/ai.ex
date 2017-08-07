@@ -61,7 +61,7 @@ defmodule Multas.Helpers.AI do
   end
 
 
-  defp extract_plate(text) do
+  def extract_plate(text) do
     regex_parsers = [@regex_plate_ABC1234, @regex_plate_ABC123, @regex_plate_B123456,
                      @regex_plate_B12345, @regex_plate_B1234, @regex_plate_123ABC, @regex_plate_AB123CD]
     extract_plate(text, regex_parsers)

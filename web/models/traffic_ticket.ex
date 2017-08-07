@@ -39,12 +39,14 @@ defmodule Multas.TrafficTicket do
     text
     |> normalize_plate
     |> case do
+        "AV8DEOCTUBREYCOMERCIO"        -> "Av. 8 de Octubre y Comercio"
         "AV8DEOCTUBREYGRALGARIBALDI"   -> "Av. 8 de Octubre y Garibaldi"
         "AVITALIAYBOLONIA"             -> "Av. Italia y Bolonia"
         "AVITALIAYFRANCISCOSIMON"      -> "Av. Italia y Fransico Simón"
         "AVITALIAYLIDO"                -> "Av. Italia y Lido"
         "AVITALIAYMATAOJO"             -> "Av. Italia y Mataojo"
         "AVMILLANYCISPLATINA"          -> "Av. Millán y Cisplatina"
+        "AVRIVERAYAROCENA"             -> "Av. Rivera y Arocena"
         "AVRIVERAYAVLUISPONCE"         -> "Av. Rivera y Av. Luis Ponce"
         "AVRIVERAYFCOLLAMBI"           -> "Av. Rivera y Francisco Llambi"
         "AVRIVERAYMARIAESPINOLA"       -> "Av. Rivera y Maria Espinola"
@@ -52,6 +54,7 @@ defmodule Multas.TrafficTicket do
         "BVARTIGASYCAMPISTEGUY"        -> "Bv. Artigas y Campisteguy"
         "BVARTIGASYPEDERNAL"           -> "Bv. Artigas y Pedernal"
         "BRBYORDONEZYAV8DEOCTUBRE"     -> "Bv. Batlle y Ordóñez y Av. 8 de Octubre"
+        "FERRERSERRAYJUANPAULLIER"     -> "Ferrer Serra y Paullier"
         "AVGRALFLORESYDARAMBURU"       -> "Gral. Flores y D. Aramburú"
         "LADEHERRERAYAVRIVERA"         -> "L. A. de Herrera y Av. Rivera"
         "RAMBLAMGANDHIYSOLANOGARCIA"   -> "Rambla Gandhi y Solano García"
@@ -61,9 +64,6 @@ defmodule Multas.TrafficTicket do
         "RREPARGENTINAYEDUARDOACEVEDO" -> "Rambla Rep. Argentina y Eduardo Acevedo"
         "RREPDEMEXICOYCOSTARICA"       -> "Rambla Rep. de México y Costa Rica"
         "RREPDELPERUYLADEHERRERA"      -> "Rambla Rep. del Perú y L. A. de Herrera"
-
-        "AV8DEOCTUBREYCOMERCIO"        -> "Av. 8 de Octubre y Comercio"
-        "AVRIVERAYAROCENA"             -> "Av. Rivera y Arocena"
         _ ->
           Logger.error "Unexpected Traffic Ticket location: #{text}"
           text

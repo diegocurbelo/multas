@@ -3,7 +3,7 @@ defmodule Multas.Mixfile do
 
   def project do
     [app: :multas,
-     version: "1.0.1",
+     version: "1.0.2",
      elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -19,7 +19,7 @@ defmodule Multas.Mixfile do
   def application do
     [mod: {Multas, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :httpoison, :floki,
+                    :phoenix_ecto, :postgrex, :httpoison, :floki, :timex,
                     :prometheus_ex, :prometheus_ecto, :prometheus_phoenix, :prometheus_plugs, :prometheus_process_collector,
                     :edeliver]]
   end
@@ -43,6 +43,7 @@ defmodule Multas.Mixfile do
      {:credo, "~> 0.5", only: [:dev, :test]},
      {:httpoison, "~> 0.10.0"},
      {:floki, "~> 0.12.0"},
+     {:timex, "~> 3.1"},
      {:edeliver, "~> 1.4.0"},
      {:distillery, "~> 1.0"},
      {:prometheus_ex, "~> 1.0"},
