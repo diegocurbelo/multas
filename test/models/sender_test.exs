@@ -3,7 +3,7 @@ defmodule Multas.SenderTest do
 
   alias Multas.Sender
 
-  @valid_attrs %{sender_id: "some content"}
+  @valid_attrs %{facebook_id: "1234567890", context: "{}"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
