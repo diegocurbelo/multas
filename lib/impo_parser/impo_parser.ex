@@ -101,7 +101,7 @@ defmodule ImpoParser do
 
     %{plate: Enum.at(values, 0),
       date: Enum.at(values, 1),
-      location: Enum.at(values, 2),
+      location: Enum.at(values, 2) |> String.replace(<<209>>, "Ñ"),
       reason: Enum.at(values, 4),
       cost: Enum.at(values, 5),
       publication_id: publication_id,

@@ -56,16 +56,19 @@ defmodule Multas.TrafficTicket do
         "BVARTIGASYCAMPISTEGUY"        -> "Bv. Artigas y Campisteguy"
         "BVARTIGASYPEDERNAL"           -> "Bv. Artigas y Pedernal"
         "BRBYORDONEZYAV8DEOCTUBRE"     -> "Bv. Batlle y Ordóñez y Av. 8 de Octubre"
-        "FERRERSERRAYJUANPAULLIER"     -> "Ferrer Serra y Paullier"
+        "FERRERSERRAYJUANPAULLIER"           -> "Ferrer Serra y Paullier"
+        "DRSALVADORFERRERSERRAYJUANPAULLIER" -> "Ferrer Serra y Paullier"
         "AVGRALFLORESYDARAMBURU"       -> "Gral. Flores y D. Aramburú"
         "LADEHERRERAYAVRIVERA"         -> "L. A. de Herrera y Av. Rivera"
         "RAMBLAMGANDHIYSOLANOGARCIA"   -> "Rambla Gandhi y Solano García"
         "RAMBLAOHIGGINSY18DEDICIEMBRE" -> "Rambla O'Higgins y 18 de Diciembre"
-        "RAMBLAOHIGGINSYMDEPROTEO"     -> "Rambla O'Higgins y Motivos de Proteo"
+        "RAMBLAOHIGGINSYMDEPROTEO"       -> "Rambla O'Higgins y Motivos de Proteo"
+        "RAMBLAOHIGGINSYMOTIVOSDEPROTEO" -> "Rambla O'Higgins y Motivos de Proteo"
         "RREPARGENTINAYCARLOSMMORALES" -> "Rambla Rep. Argentina y Carlos M. Morales"
         "RREPARGENTINAYEDUARDOACEVEDO" -> "Rambla Rep. Argentina y Eduardo Acevedo"
         "RREPDEMEXICOYCOSTARICA"       -> "Rambla Rep. de México y Costa Rica"
         "RREPDELPERUYLADEHERRERA"      -> "Rambla Rep. del Perú y L. A. de Herrera"
+
         _ ->
           Logger.error "Unexpected Traffic Ticket location: #{text}"
           text
